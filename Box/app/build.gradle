@@ -11,8 +11,8 @@ android {
         applicationId "com.fongmi.android.box"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.2"
     }
 
     buildFeatures {
@@ -33,8 +33,8 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'com.google.firebase:firebase-storage:19.2.2'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.firebase:firebase-storage:20.0.0'
     implementation 'com.github.bassaer:materialdesigncolors:1.0.0'
 }

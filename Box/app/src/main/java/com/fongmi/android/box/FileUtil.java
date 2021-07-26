@@ -15,6 +15,8 @@ import java.net.URLConnection;
 
 public class FileUtil {
 
+	private static final String VENDING = "com.android.vending";
+
 	private static File getCachePath() {
 		return App.get().getExternalCacheDir();
 	}
@@ -48,9 +50,11 @@ public class FileUtil {
 	}
 
 	private static void openFile(File file) {
-		Intent intent = new Intent(Intent.ACTION_VIEW);
+		Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+		intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
+		intent.putExtra(Intent.EXTRA_INSTALLER_PACKAGE_NAME, VENDING);
 		intent.setDataAndType(getShareUri(file), getMimeType(file.getName()));
 		App.get().startActivity(intent);
 	}
