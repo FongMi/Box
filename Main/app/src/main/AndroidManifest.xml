@@ -37,7 +37,8 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".BoxActivity">
+        <activity android:name=".BoxActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
