@@ -34,8 +34,8 @@ public class BoxActivity extends AppCompatActivity {
 	}
 
 	@Override
-	protected void onDestroy() {
-		super.onDestroy();
+	public void onBackPressed() {
 		FileUtil.clearCache();
+		finish();
 	}
 }
